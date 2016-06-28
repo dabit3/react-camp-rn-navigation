@@ -6,7 +6,7 @@ class FirstTabScreen extends Component {
   render () {
     this.props.navigator.toggleNavBar({
       to: 'hidden',
-      animated: true
+      animated: false
     })
     return (
       <View style={styles.container}>

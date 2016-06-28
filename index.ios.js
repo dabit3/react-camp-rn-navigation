@@ -7,14 +7,14 @@ Navigation.startTabBasedApp({
   tabs: [
     {
       label: 'One',
-      screen: 'example.FirstTabScreen',
+      screen: 'FirstTabScreen',
       icon: require('./img/one.png'),
       selectedIcon: require('./img/one_selected.png'),
-      title: 'Screen One'
+      title: 'Scrseen One'
     },
     {
       label: 'Two',
-      screen: 'example.SecondTabScreen',
+      screen: 'SecondTabScreen',
       icon: require('./img/two.png'),
       selectedIcon: require('./img/two_selected.png'),
       title: 'Screen Two'

@@ -5,7 +5,7 @@ import SecondTabScreen from './SecondTabScreen';
 import PushedScreen from './PushedScreen';
 
 export function registerScreens() {
-  Navigation.registerComponent('example.FirstTabScreen', () => FirstTabScreen);
-  Navigation.registerComponent('example.SecondTabScreen', () => SecondTabScreen);
-  Navigation.registerComponent('example.PushedScreen', () => PushedScreen);
+  Navigation.registerComponent('FirstTabScreen', () => FirstTabScreen);
+  Navigation.registerComponent('SecondTabScreen', () => SecondTabScreen);
+  Navigation.registerComponent('PushedScreen', () => PushedScreen);
 }
