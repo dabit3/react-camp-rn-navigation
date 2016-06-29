@@ -3,13 +3,20 @@ import { View, Text, StyleSheet, TouchableHighlight } from 'react-native'
 import About from './About'
 
 class Home extends Component {
+  navigate (component, title) {
+    this.props.navigator.push({
+      component,
+      passProps: {
+        title
+      }
+    })
+  }
   render () {
-    const { navigate } = this.props
     return (
       <View style={styles.container}>
         <Text style={styles.text}>Hello from Home</Text>
         <TouchableHighlight
-          onPress={navigate.bind(this, About)}
+          onPress={this.navigate.bind(this, About, 'React Camp')}
           style={styles.button}>
           <Text style={styles.buttonText}>About</Text>
         </TouchableHighlight>

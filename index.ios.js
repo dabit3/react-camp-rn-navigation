@@ -12,11 +12,6 @@ import {
 import Home from './Home'
 
 class RNComprehensiveNavigation extends Component {
-  navigate (component) {
-    this.refs.navigator.push({
-      component 
-    })
-  }
   renderScene (route, navigator) {
     return <route.component navigator={navigator} {...route.passProps} />
   }
@@ -26,10 +21,7 @@ class RNComprehensiveNavigation extends Component {
        ref='navigator'
        renderScene={this.renderScene.bind(this)}
        initialRoute={{
-        component: Home,
-        passProps: {
-          navigate: this.navigate.bind(this)
-        }
+        component: Home
        }} />
     );
   }
