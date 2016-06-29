@@ -6,6 +6,7 @@ class Home extends Component {
   navigate () {
     this.props.navigator.push({
       component: About,
+      title: 'About',
       passProps: {
         name: 'React Camp'
       }
