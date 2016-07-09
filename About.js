@@ -3,7 +3,6 @@ import { View, Text, StyleSheet, TouchableHighlight } from 'react-native'
 
 class About extends Component {
   render () {
-    console.log('props: ', this.props)
     return (
       <View style={styles.container}>
         <Text style={styles.text}>Hello from {this.props.title}</Text>

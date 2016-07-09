@@ -19,6 +19,7 @@ class RNComprehensiveNavigation extends Component {
     return (
      <Navigator
        ref='navigator'
+       style={{flex:1}}
        renderScene={this.renderScene.bind(this)}
        initialRoute={{
         component: Home
