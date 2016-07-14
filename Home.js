@@ -6,6 +6,7 @@ class Home extends Component {
   navigate (component, title) {
     this.props.navigator.push({
       component,
+      type: 'modal',
       passProps: {
         title
       }
@@ -28,7 +29,8 @@ class Home extends Component {
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
-    flex: 1
+    flex: 1,
+    backgroundColor: 'white'
   },
   text: {
     fontSize: 20,
