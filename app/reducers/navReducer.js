@@ -12,14 +12,8 @@ const initialState = {
    title: 'Home'
   }]
 }
-
-// You can also manually create your reducer::
 export default (state = initialState, action) => {
-  const {
-    index,
-    routes
-  } = state
-  console.log('action: ', action)
+  const { index, routes } = state
   switch (action.type) {
     case PUSH_ROUTE:
       return {
