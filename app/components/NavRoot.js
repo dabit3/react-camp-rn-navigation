@@ -12,43 +12,29 @@ const {
 } = NavigationExperimental
 
 class NavRoot extends Component {
-  constructor (props) {
-    super(props)
-    this._renderScene = this._renderScene.bind(this)
-    this._handleBackAction = this._handleBackAction.bind(this)
-  }
   componentDidMount () {
-    BackAndroid.addEventListener('hardwareBackPress', this._handleBackAction)
+    BackAndroid.addEventListener('hardwareBackPress', this.props.popRoute.bind(this))
   }
   componentWillUnmount () {
-    BackAndroid.removeEventListener('hardwareBackPress', this._handleBackAction)
+    BackAndroid.removeEventListener('hardwareBackPress', this.props.popRoute.bind(this))
   }
   _renderScene (props) {
-    const prefix = 'scene_'
-    const { scene } = props
-    if (scene.key === prefix + 'home') {
-     return <Home
-              _handleNavigate={this._handleNavigate.bind(this)} />
+    const { route } = props.scene
+    if (route.key === 'home') {
+     return <Home _handleNavigate={this._onNavigate.bind(this)} />
     }
-    if (scene.key === prefix + 'about') {
-     return <About _goBack={this._handleBackAction.bind(this)} />
+    if (route.key === 'about') {
+     return <About _goBack={this.props.popRoute.bind(this)} />
     }
   }
-  _handleBackAction () {
-    if (this.props.navigation.index === 0) {
-      return false
-    }
-    this.props.popRoute()
-    return true
-  }
-  _handleNavigate (action) {
-    switch (action && action.type) {
+  _onNavigate (action) {
+    switch (action.type) {
       case 'push':
         this.props.pushRoute(action.route)
         return true
-      case 'back':
       case 'pop':
-        return this._handleBackAction()
+        this.props.popRoute()
+        return true
       default:
         return false
     }
@@ -56,10 +42,9 @@ class NavRoot extends Component {
   render () {
     return (
       <NavigationCardStack
-        direction='vertical'
         navigationState={this.props.navigation}
-        onNavigate={this._handleNavigate.bind(this)}
-        renderScene={this._renderScene} />
+        onNavigate={this._onNavigate.bind(this)}
+        renderScene={this._renderScene.bind(this)} />
       )
    }
 }
