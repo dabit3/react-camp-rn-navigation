@@ -14,6 +14,4 @@
 
 5. [React Native Router Flux](https://github.com/aksonov/react-native-router-flux) (Pavel Aksonov)
 
-6. [ExNavigator](https://github.com/exponentjs/ex-navigator) (Exponent)
-
-7. [React Native Simple Router](https://github.com/react-native-simple-router-community/react-native-simple-router)
+6. [React Native Simple Router](https://github.com/react-native-simple-router-community/react-native-simple-router)
